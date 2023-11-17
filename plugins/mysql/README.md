@@ -1,14 +1,34 @@
-В main описан пример работы.
+# Mysql
 
+## Установка
 Перед работой загрузите:
-```
-pip install mysql-connector-python
+```console
+> pip install mysql-connector-python
 ```
 
-Файл ```mysqldb.py``` можно положить в папку libs/
-Подключение можно сделать в app/__init__.py следующим образом:
+## Подключение
+
+Файл ```mysqldb.py``` можно положить в папку ```libs/``` Подключение можно сделать в ```app/__init__.py``` следующим образом:
+
+
+
 ```python
-from libs.mysqldb import MYSQL
+from plugins.mysql.db import MYSQL
 
-# Далее по примеру в файле main
+# Подключаем Базу Данных
+sql = MYSQL('localhost','user','12345','dbbot','3306') # Подключаемся к серверу, здесь описан пример
+sql.connect() # Подключаемся к базе данных
+sql.cursor(True) # Объявляем курсор. True - автоматический commit | False - обязателен sql.commit()
+
+# Пример запроса
+sql.query('SELECT name FROM users WHERE id=%s',(20,))
+user = sql.fetchone()
+print(user[0])
 ```
+
+## Возможности
+
+### Версия v1.0: 
+* Добавлен класс MYSQL
+* В классе описаны ```fetchone```, ```fetchall``` и ```fetchmany```.
+* Добавлены ```connect```, ```cursor```, ```commit```, ```query```, и ```close```
