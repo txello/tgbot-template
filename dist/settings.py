@@ -31,3 +31,6 @@ class dirs:
     middleware = 'libs.middleware' # Папка со внешними миддлварями
     app = 'app' # Папка со скриптами
     app_router = 'router' # Переменная роутера для подключения к диспетчеру
+    
+class debug:
+    traceback = True # True - показать Tracaback при ошибках | False - скрыть Traceback при ошибках
