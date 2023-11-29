@@ -25,9 +25,11 @@ class apps:
 class dirs:
     # Для продвинутых разработчиков
     
-    middleware = 'libs.middleware' # Папка со внешними миддлварями
+    middleware = 'libs.middleware' # Файл со внешними миддлварями
     app = 'app' # Папка со скриптами
     app_router = 'router' # Переменная роутера для подключения к диспетчеру
+    lib = 'lib' # Файл с внутренними библиотеками
+    globalbot = 'libs.globalbot' # Файл с глобальными командами
     
 class debug:
     traceback = True # True - показать Tracaback при ошибках | False - скрыть Traceback при ошибках

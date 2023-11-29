@@ -8,4 +8,3 @@ try:
 except KeyboardInterrupt:
     print('Завершение...')
     apps.bot.close() # Завершаем бота
-    app.sql.close() # Завершаем подключение к БД
