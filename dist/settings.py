@@ -21,9 +21,6 @@ class apps:
     outer_middleware = {
         
     }
-    
-class SQL:
-    sqlite_file = 'files/db/test.db'
 
 class dirs:
     # Для продвинутых разработчиков
