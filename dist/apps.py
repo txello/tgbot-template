@@ -19,7 +19,7 @@ except Exception as e:
 async def start():
     bot = Bot(globales.TOKEN,parse_mode=globales.BOT_PARSE_MODE) # Объявляем бота с токеном и парсер-модом, настройки которых записаны в settings.globales
     glb = import_module(f'{dirs.globalbot}') # Импортируем файл с глобальными командами, настройки которых записаны в settings.dirs
-    [await getattr(glb,i['apps'])(bot) for i in getattr(import_module(f'{dirs.lib}'),'register').data] # Подключаем все функции, которые были зарегистрированы через @register.apps
+    [await getattr(glb,i)(bot) for i in getattr(import_module(f'{dirs.lib}'),'register').data] # Подключаем все функции, которые были зарегистрированы через @register.apps
     return await dp.start_polling(bot) # Запускаем бота как poll
 
 bot = start()

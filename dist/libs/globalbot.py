@@ -5,5 +5,4 @@ from aiogram import Bot
 async def webhooks(bot:Bot): # Обязательно иметь переменную bot
     
     # Здесь пример: Перед запуском удаляем накопленные сообщения
-    # Обязательно возвращать функцию.
-    return await bot.delete_webhook(drop_pending_updates=True)
+    await bot.delete_webhook(drop_pending_updates=True)
