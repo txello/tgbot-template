@@ -1,7 +1,7 @@
 class globales:
-    TOKEN = 'TOKEN' # Токен бота из BotFather
-    BOT_NAME = 'Bot name' # Имя бота
-    BOT_PARSE_MODE = 'Markdown' # Парсер-мод
+    # Важно! Название параметров и их значения в точности копируют параметры Bot()
+    token = 'TOKEN' # Токен бота из BotFather
+    parse_mode = 'Markdown' # Парсер-мод
     
 class apps:
     # data - здесь записаны файлы, которые пойдут в диспетчер бота.
