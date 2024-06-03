@@ -1,4 +1,5 @@
 from aiogram import Dispatcher,Bot
+from aiogram.client.default import DefaultBotProperties
 from settings import globales,apps,dirs
 from importlib import import_module
 from errors import middlewareError, appRegisterError
@@ -18,7 +19,7 @@ except Exception as e:
 
 
 async def start():
-    bot = Bot(**{i[0]:i[1] for i in [a for a in getmembers(globales, lambda a:not(isroutine(a))) if not(a[0].startswith('__') and a[0].endswith('__'))]}) # Объявляем бота с токеном и парсер-модом, настройки которых записаны в settings.globales
+    bot = Bot(token=globales.token, default=DefaultBotProperties(**{i[0]:i[1] for i in [a for a in getmembers(globales, lambda a:not(isroutine(a))) if not(a[0].startswith('__') and a[0].endswith('__'))] if i[0] != 'token'})) # Объявляем бота с токеном и парсер-модом, настройки которых записаны в settings.globales
     glb = import_module(f'{dirs.globalbot}') # Импортируем файл с глобальными командами, настройки которых записаны в settings.dirs
     [await getattr(glb,i)(bot) for i in getattr(import_module(f'{dirs.lib}'),'register').data] # Подключаем все функции, которые были зарегистрированы через @register.apps
     return await dp.start_polling(bot) # Запускаем бота как poll
