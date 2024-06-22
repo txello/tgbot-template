@@ -8,7 +8,7 @@
 2. Установите pip
 3. Установите aiogram:
 ```console
-pip install aiogram
+pip install aiogram aiohttp
 ```
 
 ### Настройка бота
