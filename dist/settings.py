@@ -29,15 +29,14 @@ class dirs:
     webhook = 'libs.webhooks'
     app = 'app' # Папка со скриптами
     app_router = 'router' # Переменная роутера для подключения к диспетчеру
-    lib = 'lib' # Файл с внутренними библиотеками
+    lib = 'core.lib' # Файл с внутренними библиотеками
     globalbot = 'libs.globalbot' # Файл с глобальными командами
     
 class webserver:
-    enable = False
+    enable = False # True|False - Включение|Отключение Веб-сервера
     
-    protocol = 'http'
-    host = 'localhost'
-    port = 8080
+    host = 'localhost' # Хост Веб-сервера
+    port = 8080 # Порт Веб-сервера
     
 class debug:
     traceback = True # True - показать Tracaback при ошибках | False - скрыть Traceback при ошибках

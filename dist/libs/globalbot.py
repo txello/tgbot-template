@@ -1,4 +1,4 @@
-from lib import register
+from core.lib import register
 from aiogram import Bot
 
 @register.apps # Регистрируем функцию как предрегистрацию параметров для бота

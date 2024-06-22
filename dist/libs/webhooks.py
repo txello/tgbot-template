@@ -1,4 +1,4 @@
-from lib import register
+from core.lib import register
 from aiogram import Bot
 from aiohttp import web
 

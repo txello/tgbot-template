@@ -1,5 +1,5 @@
 import asyncio
-import apps
+import core.apps as apps
 
 try:
     print('Бот запущен...')
