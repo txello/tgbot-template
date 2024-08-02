@@ -1,5 +1,6 @@
 import sys
 from settings import debug
+
 if not debug.traceback:
     sys.tracebacklimit = 0
 

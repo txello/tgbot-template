@@ -26,7 +26,7 @@ class dirs:
     # Для продвинутых разработчиков
     
     middleware = 'libs.middleware' # Файл со внешними миддлварями
-    webhook = 'libs.webhooks'
+    webhook = 'libs.webhooks' # Файл с вебхуками веб-сервера
     app = 'app' # Папка со скриптами
     app_router = 'router' # Переменная роутера для подключения к диспетчеру
     lib = 'core.lib' # Файл с внутренними библиотеками

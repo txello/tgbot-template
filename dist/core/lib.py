@@ -1,15 +1,22 @@
+from aiohttp import web
+
 class register:
     data = []
     data_webhook = []
+    
+    @staticmethod
     def __apps(x):
-        register.data.append(x.__name__)
+        register.data.append(x)
         return x
     
-    def __webhooks(url, method):
+    @staticmethod
+    def __webhooks(url, method, data_model=None):
         def decorator(function):
-            register.data_webhook.append([function.__name__, method, url])
+            register.data_webhook.append([function, method, url, data_model])
             return function
         return decorator
+    
+    
            
     apps = lambda x: register.__apps(x)
-    webhooks = lambda url, method: register.__webhooks(url, method)
+    webhooks = lambda url, method, data_model=None: register.__webhooks(url, method, data_model)

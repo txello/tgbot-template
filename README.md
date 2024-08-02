@@ -8,7 +8,7 @@
 2. Установите pip
 3. Установите aiogram:
 ```console
-pip install aiogram aiohttp
+pip install aiogram aiohttp pydantic
 ```
 
 ### Настройка бота
@@ -60,3 +60,7 @@ python main.py
 ### v2.0
 * Изменена структура проекта
 * Изменены настройки веб-сервера
+
+### v2.1
+* Добавлена обработка pydantic для веб-сервера
+* Исправлены баги
